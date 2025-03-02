@@ -277,7 +277,6 @@ background: #fff;
     margin-bottom: 8px;
 }
 .team-description {
-    font-weight: 400;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
@@ -353,7 +352,6 @@ width: 360px;
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);  
 }
 .overlay {
-    font-weight: 400;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
@@ -393,7 +391,6 @@ width: 360px;
     margin-bottom: 16px;
 }
 .text-footer {
-        font-weight: 400;
         font-size: 16px;
         line-height: 1.5;
         letter-spacing: 0.02em;
@@ -458,7 +455,6 @@ width: 360px;
  }
 
 input::placeholder {
-    font-weight: 400;
     font-size: 12px;
     line-height: 2;
     letter-spacing: 0.04em;
@@ -497,6 +493,7 @@ input::placeholder {
     width: 100%;
     height: 100%;
     background-color: rgba(46, 47, 66, 0.4);
+    z-index: 9999;
     opacity: 0;
     visibility: none;
     pointer-events: none;
@@ -509,10 +506,13 @@ input::placeholder {
     pointer-events: auto;
 }
 
+/*Модалка*/
+
 .modal {
     border-radius: 4px;
     width: 408px;
     min-height: 584px;
+    padding: 72px 24px 24px 24px;
     background-color: #fcfcfc;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
     position: absolute;
@@ -540,6 +540,155 @@ input::placeholder {
 .close-btn:hover, 
 .close-btn:focus {
 background-color: #404bbf;
-border: none;
+border: transparent;
 }
-    
+.close-btn:hover .close-btn-icon,
+.close-btn:focus .close-btn-icon {
+    fill: #FFFFFF;
+}
+
+.modal-text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: #2e2f42;
+    margin-bottom: 16px;
+}
+
+.modal-form {
+}
+.modal-container {
+    margin-bottom: 8px;
+}
+.modal-label {
+font-size: 12px;
+line-height: 1.17;
+letter-spacing: 0.04em;
+color: #8e8f99;
+display: block;
+margin-bottom: 4px;
+}
+.modal-input-container {
+    position: relative;
+}
+.modal-form-input {
+width: 100%;
+height: 40px;
+border: 1px solid rgba(46, 47, 66, 0.4);
+border-radius: 4px;
+padding-left: 38px;
+outline: transparent;
+transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-input:hover, 
+.modal-form-input:focus {
+    border: 1px solid #4d5ae5;
+}
+
+.modal-form-icon {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    fill: #2e2f42;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+.modal-form-input:hover +.modal-form-icon {
+    fill: #4d5ae5;}
+ .modal-form-input:focus +.modal-form-icon {
+    fill: #4d5ae5;}   
+
+.textarea-user-container {
+    margin-bottom: 16px;
+}
+
+    .user-comment {
+border: 1px solid rgba(46, 47, 66, 0.4);
+border-radius: 4px;
+width: 360px;
+height: 120px;
+padding: 8px 16px;
+resize: none;
+    }
+.user-comment:hover, 
+.user-comment:focus {
+  border: 1px solid #4d5ae5;
+  outline: transparent;  
+} 
+
+.user-comment::placeholder {
+font-size: 12px;
+line-height: 1.17;
+letter-spacing: 0.04em;
+color: rgba(46, 47, 66, 0.4);
+} 
+
+
+ .modal-checkbox {
+        margin-bottom: 24px; 
+    }
+
+.custom-checkbox {
+border-radius: 2px;
+border: 1px solid rgba(46, 47, 66, 0.4);
+width: 16px;
+height: 16px;
+margin-right: 8px;
+display: inline-flex;
+justify-content: center;
+align-items: center;
+cursor: pointer;
+transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+border 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+fill: transparent;
+}
+
+.checkbox:checked + .label-checkbox .custom-checkbox {
+    border: transparent;
+    background-color: #404bbf;
+    fill: #F4F4FD;
+}
+
+.label-checkbox {
+font-size: 12px;
+line-height: 1.17;
+letter-spacing: 0.04em;
+color: #8e8f99;
+margin-bottom: 24px;
+}
+
+.form-link {
+line-height: 1.33;
+text-decoration: underline;
+text-decoration-skip-ink: none;
+color: #4d5ae5;
+}
+
+.send-button {
+    border-radius: 4px;
+    border: none;
+    padding: 16px 32px;
+    min-width: 169px;
+    height: 56px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+    background: #4d5ae5;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    text-align: center;
+    color: #ffffff;
+}
+.send-button:hover {
+    background-color: #404bbf;}
+
